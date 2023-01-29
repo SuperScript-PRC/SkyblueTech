@@ -1,0 +1,22 @@
+# {"初始方向1": "z+", "初始方向2": "x+", "最大延伸": "20"}
+# 蔚蓝科技 SkyblueTech by SuperScript - 4s LOOP Part
+# ID 1=太阳能 2=电力刷石机 3=伐木机 4=采矿机 5=火力发电机 6=电炉 7=特斯拉 8=净化炉 9=磨粉机 11=种植站 12=地热 13=泵 14=筛子
+# Running Part
+#{80}
+execute @e[tag=jq] ~~~ detect ~~-1~ minecraft:redstone_block -1 setblock ~~-1~ target
+scoreboard players add @e[tag=sk_dc] sk_rf 0
+scoreboard players add @e[tag=jq] sk_rf 0
+scoreboard players add @e[tag=sk_dc] sk_mrf 0
+scoreboard players add @e[tag=jq] sk_hc 0
+scoreboard players add @e[tag=jq] sk_hc1 0
+tag @e[tag=收集器] remove 收集器
+tag @e[tag=sk_dc] remove sk_dc
+tag @e[tag=火力] remove 火力
+tag @e[tag=jq] remove jq
+execute @e[type=hopper_minecart] ~~~ detect ~~-1~ minecraft:hopper -1 execute @s ~~~ detect ~~1~ minecraft:cauldron -1 tag @s add 收集器
+execute @e[type=chest_minecart] ~~~ detect ~~-1~ minecraft:target -1 execute @s ~~~ detect ~~-1~ minecraft:furnace -1 tag @s add 火力
+execute @e[type=chest_minecart] ~~~ detect ~~-1~ minecraft:target -1 execute @s ~~~ detect ~~-1~ minecraft:lit_furnace -1 tag @s add 火力
+execute @e[type=chest_minecart] ~~~ detect ~~-1~ minecraft:lit_redstone_lamp -1 tag @s add sk_dc
+execute @e[rm=1] ~~~ execute @e[tag=jq,r=30,type=chest_minecart,tag=!火力,tag=!visit] ~~~ detect ~~-1~ minecraft:dispenser -1 tag @s add jq
+execute @a[rm=1] ~~~ execute @e[tag=jq,r=30,type=chest_minecart,tag=!火力,tag=!visit] ~~~ detect ~~-1~ minecraft:target -1 tag @s add jq
+execute @a ~~~ fill ~-4~-4~-4~4~4~4 minecraft:waxed_copper 0 replace minecraft:copper_block
