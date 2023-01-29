@@ -1,5 +1,5 @@
 # SkyblueTech
-A command-block system that adapted from Minecraft mod Industrial Craft 2.
+A command-block system that adapted from Minecraft tech mod such as Industrial Craft 2.
 
 这是一个基于命令方块的半数据化指令组——SkyblueTech！它还原了Minecraft-mod 工业时代2(IC2), 通用机械(MEK)和热力膨胀(TE5)的部分玩法，
 你可以建造多方块结构-组成各式各样的机器或发电机, 实现不同的物品生产自动化; 将其导入到租赁服就倍增租赁服的趣味性了 ·v·！
