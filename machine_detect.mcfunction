@@ -53,3 +53,4 @@ scoreboard players remove @e[scores={sk_hc1=1..}] sk_hc1 1
 scoreboard players remove @e[tag=sk_dc,scores={sk_rf=10001..}] sk_rf 100
 scoreboard players set @e[tag=火力] sk_type 5
 scoreboard players reset @e[tag=火力,scores={sk_type=5}] sk_type
+scoreboard question
